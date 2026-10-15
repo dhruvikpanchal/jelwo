@@ -1,0 +1,21 @@
+/* =========================================================================
+   GOOGLE FONTS: Della Respira & Jost (Organized Font System)
+   ========================================================================= */
+
+
+:root {
+  /* Font Family Variables */
+  --font-della: "Della Respira", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-jost: "Jost", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Custom Utility Classes */
+.font-della,
+.font-heading-della {
+  font-family: var(--font-della);
+}
+
+.font-jost,
+.font-body-jost {
+  font-family: var(--font-jost);
+}

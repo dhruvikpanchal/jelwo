@@ -1,0 +1,294 @@
+@import "tailwindcss";
+
+@layer components {
+  /* ==========================================================================
+     1. CONTAINERS & LAYOUT CONTROLLERS
+     Ensures consistent responsive widths and spacing throughout the entire site.
+  ========================================================================== */
+
+  /* Main Site Container (Matches Header, Hero, Category & Banner widths) */
+  .site-container {
+    @apply mx-auto w-full max-w-[1600px] px-3.5 sm:px-6 lg:px-10;
+  }
+
+  /* Narrow Container (For product details, checkout, auth, blog posts) */
+  .site-container-narrow {
+    @apply mx-auto w-full max-w-5xl px-3.5 sm:px-6 lg:px-8;
+  }
+
+  /* Standard Vertical Section Spacing */
+  .section-spacing {
+    @apply py-14 sm:py-18 lg:py-24;
+  }
+
+  .section-spacing-sm {
+    @apply py-10 sm:py-14 lg:py-16;
+  }
+
+  /* Top Announcement Bar Background with Pattern */
+  .topbar-pattern {
+    background-color: var(--color-cream);
+    background-image:
+      radial-gradient(circle at 100% 50%, color-mix(in srgb, var(--color-brand) 6%, transparent) 0%, transparent 40%),
+      radial-gradient(circle at 0% 50%, color-mix(in srgb, var(--color-brand) 4%, transparent) 0%, transparent 35%),
+      repeating-linear-gradient(45deg, color-mix(in srgb, var(--color-ink) 3%, transparent) 0, color-mix(in srgb, var(--color-ink) 3%, transparent) 1px, transparent 0, transparent 16px);
+  }
+
+  /* Standard Centered Section Header Block */
+  .section-header {
+    @apply text-center mb-10 sm:mb-14 lg:mb-16;
+  }
+
+  /* Section Kicker / Subtitle (Terracotta letter-spaced uppercase) */
+  .section-subtitle {
+    @apply text-brand text-xs sm:text-[13px] font-semibold tracking-[0.2em] uppercase mb-2 sm:mb-3 block;
+  }
+
+  /* Section Main Title (Playfair Display serif heading) */
+  .section-title {
+    @apply font-serif text-3xl sm:text-4xl lg:text-[44px] text-ink font-normal tracking-tight leading-tight;
+  }
+
+  /* Section Description Paragraph */
+  .section-description {
+    @apply text-ink-muted text-sm sm:text-base max-w-2xl mx-auto leading-relaxed mt-3;
+  }
+
+  /* ==========================================================================
+     2. RESPONSIVE GRID SYSTEMS
+     Pre-configured responsive grid layouts for high developer velocity.
+  ========================================================================== */
+
+  /* 6 Columns Grid (Categories, brands, logos) */
+  .grid-responsive-6 {
+    @apply grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 lg:gap-6;
+  }
+
+  /* 4 Columns Grid (Product listings, Instagram feeds, feature cards) */
+  .grid-responsive-4 {
+    @apply grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5 sm:gap-6 lg:gap-8;
+  }
+
+  /* 3 Columns Grid (Blog cards, feature highlights, reviews) */
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8;
+  }
+
+  /* 2 Columns Grid (Split banners, about story, contact sections) */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center;
+  }
+
+  /* ==========================================================================
+     3. BUTTONS & CALL-TO-ACTION STYLES
+     Consistent luxury jewelry boutique button designs with smooth transitions.
+  ========================================================================== */
+
+  /* Hero Slider Button (White solid with outline hover effect) */
+  .btn-hero-slider {
+    display: inline-block;
+    background-color: var(--color-surface, #ffffff);
+    color: var(--color-brand, #d9714a);
+    border: 2px solid transparent;
+    padding: 0.65rem 2rem;
+    font-family: var(--font-body, "Poppins", sans-serif);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  }
+
+  .btn-hero-slider:hover {
+    background-color: transparent;
+    color: var(--color-surface, #ffffff);
+    border-color: var(--color-surface, #ffffff);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+
+  @media (min-width: 640px) {
+    .btn-hero-slider {
+      padding: 0.75rem 2.25rem;
+      font-size: 0.8125rem;
+    }
+  }
+
+  /* Primary Brand Button (Terracotta solid -> Dark ink hover) */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-7 sm:px-8 py-3 sm:py-3.5
+           bg-brand hover:bg-ink text-white
+           font-sans text-xs sm:text-[13px] font-semibold tracking-wider uppercase
+           transition-colors duration-300 shadow-xs rounded-[1px] cursor-pointer text-center;
+  }
+
+  /* Secondary Button (Dark ink solid -> Terracotta hover) */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-7 sm:px-8 py-3 sm:py-3.5
+           bg-ink hover:bg-brand text-white
+           font-sans text-xs sm:text-[13px] font-semibold tracking-wider uppercase
+           transition-colors duration-300 shadow-xs rounded-[1px] cursor-pointer text-center;
+  }
+
+  /* Outline Button (Border only -> Filled hover) */
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-7 sm:px-8 py-3 sm:py-3.5
+           bg-transparent text-ink border border-ink
+           hover:bg-ink hover:text-white
+           font-sans text-xs sm:text-[13px] font-semibold tracking-wider uppercase
+           transition-all duration-300 rounded-[1px] cursor-pointer text-center;
+  }
+
+  /* White Solid Button (Used inside colored cards or dark sections) */
+  .btn-white {
+    @apply inline-flex items-center justify-center px-7 sm:px-8 py-3 sm:py-3.5
+           bg-surface text-ink hover:bg-brand hover:text-white
+           font-sans text-xs sm:text-[13px] font-semibold tracking-wider uppercase
+           transition-all duration-300 shadow-sm rounded-[1px] cursor-pointer text-center;
+  }
+
+  /* Floating Action / Round Icon Button (Wishlist, Quick View, Cart, Navigation) */
+  .btn-icon {
+    @apply w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-surface text-ink
+           border border-border-soft shadow-xs flex items-center justify-center
+           hover:bg-brand hover:text-white hover:border-brand
+           transition-all duration-200 cursor-pointer;
+  }
+
+  /* ==========================================================================
+     4. PRODUCT CARD & ECOMMERCE UTILITIES
+  ========================================================================== */
+
+  /* Product Card Base */
+  .product-card {
+    @apply relative bg-surface border border-border-soft/80 rounded-xs overflow-hidden
+           transition-all duration-300 hover:shadow-[0_8px_25px_rgba(0,0,0,0.06)];
+  }
+
+  /* Product Image Box */
+  .product-img-wrap {
+    @apply relative aspect-square overflow-hidden bg-cream-light flex items-center justify-center p-4;
+  }
+
+  /* Image Zoom Utility */
+  .img-zoom {
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .group:hover .img-zoom,
+  .img-zoom:hover {
+    transform: scale(1.06);
+  }
+
+  /* eCommerce Badges */
+  .badge-sale {
+    @apply inline-flex items-center justify-center bg-ink text-white
+           text-[10px] font-bold tracking-wider px-2 py-0.5 uppercase rounded-[1px];
+  }
+
+  .badge-new {
+    @apply inline-flex items-center justify-center bg-brand text-white
+           text-[10px] font-bold tracking-wider px-2 py-0.5 uppercase rounded-[1px];
+  }
+
+  .badge-discount {
+    @apply inline-flex items-center justify-center bg-discount text-white
+           text-[10px] font-bold tracking-wider px-2 py-0.5 uppercase rounded-[1px];
+  }
+
+  /* ==========================================================================
+     5. LUXURY FORM CONTROLS & INPUTS
+  ========================================================================== */
+
+  .input-luxury {
+    @apply w-full px-4 py-3 bg-surface border border-border
+           focus:border-brand focus:ring-1 focus:ring-brand
+           text-sm text-ink placeholder:text-ink-soft
+           outline-none transition-all rounded-[1px];
+  }
+
+  .select-luxury {
+    @apply w-full px-4 py-3 bg-surface border border-border
+           focus:border-brand focus:ring-1 focus:ring-brand
+           text-sm text-ink outline-none transition-all rounded-[1px] cursor-pointer;
+  }
+
+  /* ==========================================================================
+     6. BORDERS, DIVIDERS & ELEVATIONS
+  ========================================================================== */
+
+  .border-soft {
+    @apply border border-border-soft;
+  }
+
+  .divider-soft {
+    @apply border-t border-border-soft;
+  }
+
+  .card-elevated {
+    @apply bg-surface border border-border-soft rounded-xs shadow-[0_4px_20px_rgba(0,0,0,0.04)]
+           transition-shadow duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)];
+  }
+
+  /* ==========================================================================
+     7. TYPOGRAPHY CONTROLLERS (Display, Headings & Body)
+  ========================================================================== */
+
+  .text-display {
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-[1.05] tracking-tight;
+  }
+
+  .heading-1 {
+    @apply font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal leading-tight tracking-tight;
+  }
+
+  .heading-2 {
+    @apply font-serif text-2xl sm:text-3xl lg:text-4xl font-normal leading-tight;
+  }
+
+  .heading-3 {
+    @apply font-serif text-xl sm:text-2xl lg:text-3xl font-normal leading-snug;
+  }
+
+  .heading-4 {
+    @apply font-serif text-lg sm:text-xl lg:text-2xl font-normal leading-snug;
+  }
+
+  .body-large {
+    @apply text-base sm:text-lg lg:text-xl leading-7 lg:leading-8 text-ink-muted;
+  }
+
+  .body {
+    @apply text-sm sm:text-base lg:text-lg leading-6 sm:leading-7 text-ink-muted;
+  }
+
+  .body-small {
+    @apply text-xs sm:text-sm lg:text-base leading-5 sm:leading-6 text-ink-soft;
+  }
+
+  .caption {
+    @apply text-xs sm:text-sm leading-5 text-ink-soft;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+

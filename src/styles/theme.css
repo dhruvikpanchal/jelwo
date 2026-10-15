@@ -1,0 +1,61 @@
+@theme {
+  /* ---- Brand / accent (coral-terracotta) ---- */
+  --color-brand: #d9714a;
+  --color-brand-hover: #c4623d;
+  --color-brand-dark: #993c1d;
+  --color-brand-light: #f3ded4;
+  --color-brand-terracotta: #d27961;
+
+  /* ---- Ink / text ---- */
+  --color-ink: #1c1c1c;
+  --color-ink-muted: #6b6b63;
+  --color-ink-soft: #8a8a82;
+
+  /* ---- Backgrounds ---- */
+  --color-cream: #f5f1e8;
+  --color-cream-dark: #ece5d8;
+  --color-cream-light: #faf8f5;
+  --color-cream-card: #f9f6f0;
+  --color-banner-blue: #eef5fa;
+  --color-surface: #ffffff;
+
+  /* ---- Borders / dividers ---- */
+  --color-border: #e5e0d8;
+  --color-border-soft: #ede7dc;
+  --color-border-subtle: #f0eae1;
+  --color-border-strong: #d3ccc0;
+
+  /* ---- Status colors ---- */
+  --color-discount: #3fa65c;
+  --color-discount-bg: #e7f5eb;
+  --color-star: #f5b400;
+  --color-sale: #1c1c1c;
+
+  /* ---- Glitch / RGB-split hover effect ---- */
+  --color-glitch-dark: #1c1c1c;
+  --color-glitch-red: #ff2a4d;
+  --color-glitch-cyan: #2ad9ff;
+
+  /* ---- Payment Brand Colors ---- */
+  --color-payment-visa: #142fbd;
+  --color-payment-visa-dark: #1532cb;
+  --color-payment-mastercard-red: #eb001b;
+  --color-payment-mastercard-yellow: #f79e1b;
+  --color-payment-mastercard-orange: #ff5f00;
+  --color-payment-amex: #0071ce;
+  --color-payment-paypal-dark: #003087;
+  --color-payment-paypal-blue: #3086c8;
+  --color-payment-paypal-deep: #012169;
+
+  /* ---- Fonts ---- */
+  --font-heading: "Della Respira", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body:
+    "Jost", "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-della: "Della Respira", Georgia, serif;
+  --font-jost: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* ---- Radius ---- */
+  --radius-card: 4px;
+  --radius-pill: 999px;
+}
+
